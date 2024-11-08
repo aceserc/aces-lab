@@ -1,11 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Card, CardContent } from "@/components/ui/card";
 import { committeeMembers } from "@/data/committe";
 import ACESLOGO from "@/assets/logo.png";
 import TULOGO from "@/assets/tu.png";
-import SIGNATURE from "@/assets/logo.png";
 import type { content, } from "@/types";
 import { replaceNewLines } from "@/lib/new-lines";
-
+import generatePDF, { Resolution, Margin } from 'react-to-pdf';
 export function A4LetterTemplate({
   refNo = "",
   content = "",
@@ -19,9 +19,17 @@ export function A4LetterTemplate({
   signature = ""
 }: content) {
 
+  const options = {
+    resolution: Resolution.HIGH,
+    page: {
+      margin: Margin.SMALL,
+      format: 'letter',
+    },
+  }
+  const getTargetElement = () => document.getElementById('content-id');
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
-      <Card className="w-[794px] h-[1123px] overflow-hidden shadow-xl">
+      <Card className="w-[794px] h-[1123px] overflow-hidden shadow-xl" id="content-id">
         <CardContent className="p-0">
           <div className="flex flex-col h-full">
             {/* Header Section */}
@@ -79,7 +87,7 @@ export function A4LetterTemplate({
                 <div className="mt-16 font-kokila text-2xl text-right">
                   <div>{signatureTitle}</div>
                   <div className="mt-8">
-                    {signature && <img src={SIGNATURE} alt="Signature" className="ml-auto mb-2 h-16" />}
+                    {signature ? (<img src={signature} alt="Signature" className="ml-auto mb-2 h-16" />) : <span></span>}
                     <div>{signerName}</div>
                     <div>{signerPosition}</div>
                   </div>
@@ -96,4 +104,4 @@ export function A4LetterTemplate({
       </Card>
     </div>
   );
-}
+};

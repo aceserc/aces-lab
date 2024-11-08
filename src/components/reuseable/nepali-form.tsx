@@ -15,9 +15,7 @@ import { toast } from "sonner";
 import React from "react";
 
 type NepaliFormProps = {
-
   control: Control<FormData>;
-
 };
 
 export default function NepaliForm({ control }: NepaliFormProps) {
@@ -29,8 +27,8 @@ export default function NepaliForm({ control }: NepaliFormProps) {
   };
   return (
 
-    <Form {...form}>
-      <form className="space-y-8 max-w-3xl mx-auto py-10">
+    <Form {...form} >
+      <form className="space-y-8  max-w-3xl mx-auto py-10">
 
         <div className="grid grid-cols-12 gap-4">
 
@@ -49,7 +47,7 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                       type="text"
                       {...field} />
                   </FormControl>
-                  <FormDescription>Refrence number of the letter</FormDescription>
+                  <FormDescription>Reference number of the letter</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -104,19 +102,22 @@ export default function NepaliForm({ control }: NepaliFormProps) {
         <FormField
           control={control}
           name="recipientTitle"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Recipient Title</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="श्रीमान "
-                  type="text"
-                  {...field} />
-              </FormControl>
+          render={({ field }) => {
+            return (
+              <FormItem>
+                <FormLabel>Recipient Title</FormLabel>
+                <FormControl>
+                  <Input
+                    className="font-kokila text-2xl"
+                    placeholder="श्रीमान "
+                    type="text"
+                    {...field} />
+                </FormControl>
 
-              <FormMessage />
-            </FormItem>
-          )}
+                <FormMessage />
+              </FormItem>
+            );
+          }}
         />
 
         <FormField
@@ -234,7 +235,7 @@ export default function NepaliForm({ control }: NepaliFormProps) {
           name="signature"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Signer Position</FormLabel>
+              <FormLabel>Signature</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Link to your signature"
