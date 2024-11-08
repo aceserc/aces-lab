@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Sagarmatha";
+  src: url("../fonts/sagarmatha.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Mangal";
+  src: url("../fonts/mangal.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sanskrit";
+  src: url("../fonts/Sanskrit2003.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Kokila";
+  src: url("../fonts/Kokila.ttf") format("truetype");
+}
