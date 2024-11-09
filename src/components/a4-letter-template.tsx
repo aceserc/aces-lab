@@ -6,6 +6,7 @@ import TULOGO from "@/assets/tu.png";
 import type { content, } from "@/types";
 import { replaceNewLines } from "@/lib/new-lines";
 import generatePDF, { Resolution, Margin } from 'react-to-pdf';
+import NepaliDate from 'nepali-datetime'
 export function A4LetterTemplate({
   refNo = "",
   content = "",
@@ -27,6 +28,7 @@ export function A4LetterTemplate({
     },
   }
   const getTargetElement = () => document.getElementById('content-id');
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
       <Card className="w-[794px] h-[1123px] overflow-hidden shadow-xl" id="content-id">
@@ -63,7 +65,7 @@ export function A4LetterTemplate({
               <div className="flex-1 p-6 relative">
                 {/* Date */}
                 <div className="absolute font-kokila text-2xl top-6 right-6">
-                  मिति: {date.toLocaleDateString()}
+                  मिति: {new NepaliDate(date).format("YYYY-MM-DD")}
                 </div>
 
                 {/* Recipient */}

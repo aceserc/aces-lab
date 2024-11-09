@@ -38,6 +38,9 @@ importers:
       lucide-react:
         specifier: ^0.454.0
         version: 0.454.0(react@18.3.1)
+      nepali-datetime:
+        specifier: ^1.2.1
+        version: 1.2.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1386,6 +1389,9 @@ packages:
 
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+
+  nepali-datetime@1.2.1:
+    resolution: {integrity: sha512-d6nUSYFTGV/Cpzno7IjtH0GzH14wXW5kQgq+UEN894Wb4jSUUYgwhntls90UZoLMoFyRUktOCEV4ZzgvoqfDKg==}
 
   node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
@@ -2982,6 +2988,8 @@ snapshots:
   nanoid@3.3.7: {}
 
   natural-compare@1.4.0: {}
+
+  nepali-datetime@1.2.1: {}
 
   node-releases@2.0.18: {}
 
