@@ -108,7 +108,7 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                 <FormLabel>Recipient Title</FormLabel>
                 <FormControl>
                   <Input
-                    className="font-kokila text-2xl"
+                    className="font-notoSerifDevanagari text-2xl"
                     placeholder="श्रीमान "
                     type="text"
                     {...field} />

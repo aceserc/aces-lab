@@ -48,7 +48,7 @@ export function A4LetterTemplate({
 
             <div className="flex flex-1">
               {/* Sidebar */}
-              <div className="w-48 bg-[#87CEEB] p-4 text-xs border-r-2 border-gray-800">
+              <div className="w-35 bg-[#87CEEB] p-4 text-xs border-r-2 border-gray-800">
                 <div className="font-bold mb-2">Ref No.: {refNo}</div>
                 {committeeMembers.map((role, index) => (
                   <div key={index} className="mt-2 justify-center">
@@ -64,29 +64,29 @@ export function A4LetterTemplate({
               {/* Main Content */}
               <div className="flex-1 p-6 relative">
                 {/* Date */}
-                <div className="absolute font-kokila text-2xl top-6 right-6">
+                <div className="absolute font-notoSerifDevanagari top-6 right-6">
                   मिति: {new NepaliDate(date).format("YYYY-MM-DD")}
                 </div>
 
                 {/* Recipient */}
-                <div className="mt-16 font-kokila text-2xl mb-6 whitespace-pre-line">
+                <div className="mt-16 font-notoSerifDevanagari  mb-6 whitespace-pre-line">
                   {recipientTitle}
                   <br />
                   {replaceNewLines(recipientAddress)}
                 </div>
 
                 {/* Subject */}
-                <div className="mb-6 font-kokila text-2xl text-center font-bold">
+                <div className="mb-6 font-notoSerifDevanagari  text-center font-bold">
                   विषय: {subject}
                 </div>
 
                 {/* Content */}
-                <div className="font-kokila text-2xl mb-8 whitespace-pre-line leading-relaxed">
+                <div className="font-notoSerifDevanagari text-justify  mb-8 whitespace-pre-line leading-relaxed">
                   {content}
                 </div>
 
                 {/* Signature */}
-                <div className="mt-16 font-kokila text-2xl text-right">
+                <div className="mt-16 font-notoSerifDevanagari  text-right">
                   <div>{signatureTitle}</div>
                   <div className="mt-8">
                     {signature ? (<img src={signature} alt="Signature" className="ml-auto mb-2 h-16" />) : <span></span>}

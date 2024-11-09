@@ -12,6 +12,7 @@ export default {
 				mangal: ['Mangal', 'sans-serif'],
 				sanskrit: ['Sanskrit', 'sans-serif'],
 				kokila: ['Kokila ', 'sans-serif'],
+				notoSerifDevanagari: ['Noto Serif Devanagari', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

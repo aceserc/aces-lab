@@ -78,15 +78,16 @@ export default function CreateLetter() {
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Fill out this form to generate a letter in Nepali format.</p>
-                  <p>The generated letter will appear on the right side.</p>
+                  <p>लेटरप्याडिन नेपाली ढाँचा उत्पन्न गर्न यो फारम भर्नुहोस्।</p>
+                  <p>उत्पन्न पत्र दाहिने छेउमा देखा पर्नेछ।</p>
+                  <p>नेपाली टाइपिङ र हिज्जे जाँचको लागि कृपया hijje.com मा जानुहोस्</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
           </div>
           <form>
             <NepaliForm control={control} />
-            <Button type="submit" className="mt-4 w-full">Generate Letter</Button>
+
           </form>
         </div>
         <div className="w-full lg:w-1/2 bg-gray-50 p-8 overflow-y-auto">
