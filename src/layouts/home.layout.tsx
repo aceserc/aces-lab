@@ -1,11 +1,15 @@
+import { Footer } from "@/components/reuseable/footer"
+import { Navbar } from "@/components/reuseable/navbar"
 import { Outlet } from "react-router-dom"
 
 const HomeLayout = () => {
   return (
-    <div>
-
-      <Outlet />
-
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   )
 }

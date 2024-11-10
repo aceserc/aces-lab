@@ -13,7 +13,6 @@ export const loginWithGoogle = (): Promise<User> => {
         const result = await signInWithPopup(auth, provider); // Perform Google login
 
         const user = result.user; // Extract user from result
-        console.log(user); // Log the user object
         resolve(user); // Resolve the Promise with the user
       } catch (error) {
         reject(error); // Reject the Promise with the error
