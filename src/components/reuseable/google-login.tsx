@@ -7,7 +7,7 @@ function GoogleLogin() {
   const navigate = useNavigate();
   return (
     <Button
-        onClick={async () => { await loginWithGoogle(); navigate("/dashboard/create"); }}
+        onClick={async () => { await loginWithGoogle(); navigate("/dashboard"); }}
       variant="secondary"
       className="gap-4 border-primary/40 border"
     >

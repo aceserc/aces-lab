@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import useAuth from "@/hooks/use-auth.ts";
 import {toast} from "sonner";
+import {Navbar} from "@/components/reuseable/navbar.tsx";
 
 const AuthLayout = () => {
   const { user, loading } = useAuth();
@@ -19,8 +20,11 @@ const AuthLayout = () => {
   }
 
   return (
-      <div>
-        <Outlet />
+      <div className="font-bricolageGrotesque flex flex-col min-h-screen">
+        <Navbar/>
+        <main className="flex-grow">
+          <Outlet/>
+        </main>
       </div>
   );
 };

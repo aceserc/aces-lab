@@ -10,6 +10,7 @@ import HomeLayout from "./layouts/home.layout";
 import CreateLetter from "./pages/create";
 import LoginPage from "./pages/login-page";
 import AuthLayout from "@/layouts/auth.layout.tsx";
+import Dashboard from "@/pages/dashboard.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,9 @@ export const router = createBrowserRouter([
       {
         path:"/dashboard/create",
         element:<CreateLetter/>
+      },{
+      path:"/dashboard",
+        element: <Dashboard/>
       }
     ]
   },
