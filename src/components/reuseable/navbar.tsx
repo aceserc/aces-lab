@@ -10,7 +10,6 @@ import useAuth from "@/hooks/use-auth"
 import { signOut } from "firebase/auth"
 import { auth } from "@/config/firebase"
 import { Link } from "react-router-dom"
-import { loginWithGoogle } from "@/firebase/login-with-google"
 import Logo from "@/assets/logo.png"
 
 
@@ -48,7 +47,9 @@ export function Navbar() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button onClick={loginWithGoogle}>Login</Button>
+              <Button>
+                <Link to="/login">Login</Link>
+              </Button>
             )}
           </div>
         </div>

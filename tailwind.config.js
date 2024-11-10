@@ -13,6 +13,8 @@ export default {
 				sanskrit: ['Sanskrit', 'sans-serif'],
 				kokila: ['Kokila ', 'sans-serif'],
 				notoSerifDevanagari: ['Noto Serif Devanagari', 'serif'],
+				bricolageGrotesque: ['Bricolage Grotesque', 'sans-serif'],
+
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -3,8 +3,6 @@ import { Button } from "../ui/button";
 import { loginWithGoogle } from "@/firebase/login-with-google";
 
 const GoogleLogin = () => {
-
-
   return (
     <Button
       onClick={loginWithGoogle}
