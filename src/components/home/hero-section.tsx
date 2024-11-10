@@ -1,5 +1,6 @@
-import { Button } from '@/components/ui/button'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+
+import { Button } from "@/components/ui/button";
 
 function HeroSection() {
   return (
@@ -33,7 +34,7 @@ function HeroSection() {
       </div>
     </section>
 
-  )
+  );
 }
 
-export default HeroSection
+export default HeroSection;

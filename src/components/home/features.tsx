@@ -1,4 +1,4 @@
-import { FileText, Users, Zap } from 'lucide-react'
+import { FileText, Users, Zap } from "lucide-react";
 
 function Features() {
   return (
@@ -58,7 +58,7 @@ function Features() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Features
+export default Features;

@@ -1,19 +1,20 @@
-import Logo from '@/assets/logo.png'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
+import { signOut } from "firebase/auth";
+import { Link } from "react-router-dom";
+
+import Logo from "@/assets/logo.png";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { auth } from '@/config/firebase'
-import useAuth from '@/hooks/use-auth'
-import { signOut } from 'firebase/auth'
-import { Link } from 'react-router-dom'
+} from "@/components/ui/dropdown-menu";
+import { auth } from "@/config/firebase";
+import useAuth from "@/hooks/use-auth";
 
 export function Navbar() {
-  const { user } = useAuth()
+  const { user } = useAuth();
 
   return (
     <nav className="bg-white shadow-sm">
@@ -32,8 +33,8 @@ export function Navbar() {
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                         <Avatar className="h-8 w-8">
-                          <AvatarImage src={user?.photoURL ?? ''} alt={user?.displayName ?? 'user-image'} />
-                          <AvatarFallback>{user.displayName?.charAt(0) ?? ''}</AvatarFallback>
+                          <AvatarImage src={user?.photoURL ?? ""} alt={user?.displayName ?? "user-image"} />
+                          <AvatarFallback>{user.displayName?.charAt(0) ?? ""}</AvatarFallback>
                         </Avatar>
                       </Button>
                     </DropdownMenuTrigger>
@@ -56,5 +57,5 @@ export function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

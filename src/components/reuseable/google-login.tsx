@@ -1,5 +1,6 @@
-import { loginWithGoogle } from '@/firebase/login-with-google'
-import { Button } from '../ui/button'
+import { loginWithGoogle } from "@/firebase/login-with-google";
+
+import { Button } from "../ui/button";
 
 function GoogleLogin() {
   return (
@@ -16,7 +17,7 @@ function GoogleLogin() {
       />
       Continue with Google
     </Button>
-  )
+  );
 }
 
-export default GoogleLogin
+export default GoogleLogin;

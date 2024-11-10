@@ -1,23 +1,24 @@
-import type { content } from '@/types'
-import ACESLOGO from '@/assets/logo.png'
-import TULOGO from '@/assets/tu.png'
-import { Card, CardContent } from '@/components/ui/card'
-import { committeeMembers } from '@/data/committe'
-import { replaceNewLines } from '@/lib/new-lines'
+import type { content } from "@/types";
+
+import ACESLOGO from "@/assets/logo.png";
+import TULOGO from "@/assets/tu.png";
+import { Card, CardContent } from "@/components/ui/card";
+import { committeeMembers } from "@/data/committe";
+import { replaceNewLines } from "@/lib/new-lines";
 // import generatePDF, { Resolution, Margin } from 'react-to-pdf';
-import NepaliDate from 'nepali-datetime'
+import NepaliDate from "nepali-datetime";
 
 export function A4LetterTemplate({
-  refNo = '',
-  content = '',
+  refNo = "",
+  content = "",
   date = new Date(),
-  recipientTitle = '',
-  recipientAddress = '',
-  subject = '',
-  signatureTitle = '',
-  signerName = '',
-  signerPosition = '',
-  signature = '',
+  recipientTitle = "",
+  recipientAddress = "",
+  subject = "",
+  signatureTitle = "",
+  signerName = "",
+  signerPosition = "",
+  signature = "",
 }: content) {
   // const options = {
   //   resolution: Resolution.HIGH,
@@ -68,8 +69,8 @@ export function A4LetterTemplate({
                 {/* Date */}
                 <div className="absolute font-notoSerifDevanagari top-6 right-6">
                   मिति:
-                  {' '}
-                  {new NepaliDate(date).format('YYYY-MM-DD')}
+                  {" "}
+                  {new NepaliDate(date).format("YYYY-MM-DD")}
                 </div>
 
                 {/* Recipient */}
@@ -82,7 +83,7 @@ export function A4LetterTemplate({
                 {/* Subject */}
                 <div className="mb-6 font-notoSerifDevanagari  text-center font-bold">
                   विषय:
-                  {' '}
+                  {" "}
                   {subject}
                 </div>
 
@@ -111,5 +112,5 @@ export function A4LetterTemplate({
         </CardContent>
       </Card>
     </div>
-  )
+  );
 };

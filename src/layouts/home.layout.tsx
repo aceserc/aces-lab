@@ -1,6 +1,7 @@
-import { Footer } from '@/components/reuseable/footer'
-import { Navbar } from '@/components/reuseable/navbar'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
+
+import { Footer } from "@/components/reuseable/footer";
+import { Navbar } from "@/components/reuseable/navbar";
 
 function HomeLayout() {
   return (
@@ -11,7 +12,7 @@ function HomeLayout() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default HomeLayout
+export default HomeLayout;

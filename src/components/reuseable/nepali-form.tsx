@@ -1,29 +1,32 @@
-import type { FormData } from '@/pages/Create'
-import type { Control } from 'react-hook-form'
-import { Button } from '@/components/ui/button'
-import { Calendar } from '@/components/ui/calendar'
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { Textarea } from '@/components/ui/textarea'
-import { cn } from '@/lib/utils'
-import { format } from 'date-fns'
-import { Calendar as CalendarIcon } from 'lucide-react'
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import { toast } from 'sonner'
+import type { Control } from "react-hook-form";
+
+import { format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+
+import type { FormData } from "@/pages/create";
+
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 
 interface NepaliFormProps {
-  control: Control<FormData>
+  control: Control<FormData>;
 }
 
 export default function NepaliForm({ control }: NepaliFormProps) {
-  const form = useForm<FormData>()
+  const form = useForm<FormData>();
   const onReset = (e: React.SyntheticEvent<EventTarget>) => {
-    e.preventDefault()
-    form.reset()
-    toast.success('Form reset successfully')
-  }
+    e.preventDefault();
+    form.reset();
+    toast.success("Form reset successfully");
+  };
   return (
 
     <Form {...form}>
@@ -68,13 +71,13 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                         <Button
                           variant="outline"
                           className={cn(
-                            'w-[240px] pl-3 text-left font-normal',
-                            !field.value && 'text-muted-foreground',
+                            "w-[240px] pl-3 text-left font-normal",
+                            !field.value && "text-muted-foreground",
                           )}
                         >
                           {field.value
                             ? (
-                                format(field.value, 'PPP')
+                                format(field.value, "PPP")
                               )
                             : (
                                 <span>Pick a date</span>
@@ -119,7 +122,7 @@ export default function NepaliForm({ control }: NepaliFormProps) {
 
                 <FormMessage />
               </FormItem>
-            )
+            );
           }}
         />
 
@@ -259,5 +262,5 @@ export default function NepaliForm({ control }: NepaliFormProps) {
         <Button onClick={onReset} type="button">Reset Form</Button>
       </form>
     </Form>
-  )
+  );
 }

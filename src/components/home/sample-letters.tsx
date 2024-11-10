@@ -1,13 +1,14 @@
-import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { Button } from '../ui/button'
-import { Card, CardContent } from '../ui/card'
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+import { Button } from "../ui/button";
+import { Card, CardContent } from "../ui/card";
 
 const letters = [
-  { title: 'Official Request', description: 'A formal letter requesting official documents.' },
-  { title: 'Invitation', description: 'An invitation letter for a cultural event.' },
-  { title: 'Job Application', description: 'A professional job application letter.' },
-]
+  { title: "Official Request", description: "A formal letter requesting official documents." },
+  { title: "Invitation", description: "An invitation letter for a cultural event." },
+  { title: "Job Application", description: "A professional job application letter." },
+];
 function SampleLetters() {
   return (
     <section className="py-20">
@@ -28,7 +29,7 @@ function SampleLetters() {
                 <Link to={`/samples/${index + 1}`}>
                   <Button variant="outline" className="w-full">
                     View Sample
-                    {' '}
+                    {" "}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -38,7 +39,7 @@ function SampleLetters() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default SampleLetters
+export default SampleLetters;

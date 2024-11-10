@@ -1,6 +1,7 @@
-import { FileQuestion, Home } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { Button } from '../ui/button'
+import { FileQuestion, Home } from "lucide-react";
+import { Link } from "react-router-dom";
+
+import { Button } from "../ui/button";
 
 function NotFound() {
   return (
@@ -58,7 +59,7 @@ function NotFound() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default NotFound
+export default NotFound;

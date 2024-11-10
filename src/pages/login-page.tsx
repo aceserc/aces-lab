@@ -1,6 +1,7 @@
-import Logo from '@/assets/logo.png'
-import GoogleLogin from '@/components/reuseable/google-login'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+
+import Logo from "@/assets/logo.png";
+import GoogleLogin from "@/components/reuseable/google-login";
 
 function LoginPage() {
   return (
@@ -9,8 +10,8 @@ function LoginPage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(\'https://images.unsplash.com/photo-1566125882500-87e10f726cdc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\')',
-            filter: 'brightness(0.7)',
+            backgroundImage: "url('https://images.unsplash.com/photo-1566125882500-87e10f726cdc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            filter: "brightness(0.7)",
           }}
         />
         <div className="relative z-20 flex items-center text-lg font-medium">
@@ -45,16 +46,16 @@ function LoginPage() {
           </div>
           <p className="px-8 text-center text-sm text-muted-foreground">
             By clicking continue, you agree to our
-            {' '}
+            {" "}
             <Link
               to="/terms"
               className="underline underline-offset-4 hover:text-primary"
             >
               Terms of Service
             </Link>
-            {' '}
+            {" "}
             and
-            {' '}
+            {" "}
             <Link
               to="/privacy"
               className="underline underline-offset-4 hover:text-primary"
@@ -67,7 +68,7 @@ function LoginPage() {
       </div>
     </div>
 
-  )
+  );
 }
 
-export default LoginPage
+export default LoginPage;
