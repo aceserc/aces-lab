@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { Card, CardContent } from "@/components/ui/card";
 import { committeeMembers } from "@/data/committe";
 import ACESLOGO from "@/assets/logo.png";
 import TULOGO from "@/assets/tu.png";
 import type { content, } from "@/types";
 import { replaceNewLines } from "@/lib/new-lines";
-import generatePDF, { Resolution, Margin } from 'react-to-pdf';
+// import generatePDF, { Resolution, Margin } from 'react-to-pdf';
 import NepaliDate from 'nepali-datetime'
 export function A4LetterTemplate({
   refNo = "",
@@ -20,14 +20,14 @@ export function A4LetterTemplate({
   signature = ""
 }: content) {
 
-  const options = {
-    resolution: Resolution.HIGH,
-    page: {
-      margin: Margin.SMALL,
-      format: 'letter',
-    },
-  }
-  const getTargetElement = () => document.getElementById('content-id');
+  // const options = {
+  //   resolution: Resolution.HIGH,
+  //   page: {
+  //     margin: Margin.SMALL,
+  //     format: 'letter',
+  //   },
+  // }
+  // const getTargetElement = () => document.getElementById('content-id');
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
