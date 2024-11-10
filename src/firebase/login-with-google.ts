@@ -17,6 +17,7 @@ export function loginWithGoogle(): Promise<User> {
 
         const user = result.user; // Extract user from result
         resolve(user); // Resolve the Promise with the user
+
       }
       catch (error) {
         reject(error); // Reject the Promise with the error

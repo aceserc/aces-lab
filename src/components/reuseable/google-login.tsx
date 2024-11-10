@@ -1,11 +1,13 @@
 import { loginWithGoogle } from "@/firebase/login-with-google";
 
 import { Button } from "../ui/button";
+import {useNavigate} from "react-router-dom";
 
 function GoogleLogin() {
+  const navigate = useNavigate();
   return (
     <Button
-      onClick={loginWithGoogle}
+        onClick={async () => { await loginWithGoogle(); navigate("/dashboard/create"); }}
       variant="secondary"
       className="gap-4 border-primary/40 border"
     >

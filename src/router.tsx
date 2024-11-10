@@ -9,18 +9,28 @@ import { letterData } from "./data/dummy";
 import HomeLayout from "./layouts/home.layout";
 import CreateLetter from "./pages/create";
 import LoginPage from "./pages/login-page";
+import AuthLayout from "@/layouts/auth.layout.tsx";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
     children: [
-      { path: "", element: <App /> },
+      { path: "/", element: <App /> },
       { path: "login", element: <LoginPage /> },
       { path: "about", element: <A4LetterTemplate {...letterData} /> },
       { path: "contact", element: <div> Contact</div> },
-      { path: "letter", element: <CreateLetter /> },
     ],
+  },
+  {
+    path:"/dashboard",
+    element:<AuthLayout/>,
+    children:[
+      {
+        path:"/dashboard/create",
+        element:<CreateLetter/>
+      }
+    ]
   },
   {
     path: "*",

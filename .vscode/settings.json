@@ -10,7 +10,7 @@
     "YUNESH"
   ],
   // Disable the default formatter, use eslint instead
-  "prettier.enable": true,
+  "prettier.enable": false,
   "editor.formatOnSave": false,
 
   // Auto fix
