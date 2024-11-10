@@ -1,17 +1,16 @@
-import { Button } from "@/components/ui/button"
+import Logo from '@/assets/logo.png'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import useAuth from "@/hooks/use-auth"
-import { signOut } from "firebase/auth"
-import { auth } from "@/config/firebase"
-import { Link } from "react-router-dom"
-import Logo from "@/assets/logo.png"
-
+} from '@/components/ui/dropdown-menu'
+import { auth } from '@/config/firebase'
+import useAuth from '@/hooks/use-auth'
+import { signOut } from 'firebase/auth'
+import { Link } from 'react-router-dom'
 
 export function Navbar() {
   const { user } = useAuth()
@@ -27,30 +26,32 @@ export function Navbar() {
             </Link>
           </div>
           <div className="flex items-center">
-            {user ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                    <Avatar className="h-8 w-8">
-                      <AvatarImage src={user?.photoURL ?? ""} alt={user?.displayName ?? "user-image"} />
-                      <AvatarFallback>{user.displayName?.charAt(0) ?? ""}</AvatarFallback>
-                    </Avatar>
+            {user
+              ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                        <Avatar className="h-8 w-8">
+                          <AvatarImage src={user?.photoURL ?? ''} alt={user?.displayName ?? 'user-image'} />
+                          <AvatarFallback>{user.displayName?.charAt(0) ?? ''}</AvatarFallback>
+                        </Avatar>
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuItem>
+                        <Link to="/">Settings</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={async () => await signOut(auth)}>
+                        Logout
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                )
+              : (
+                  <Button>
+                    <Link to="/login">Login</Link>
                   </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuItem>
-                    <Link to="/">Settings</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={async () => await signOut(auth)}>
-                    Logout
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <Button>
-                <Link to="/login">Login</Link>
-              </Button>
-            )}
+                )}
           </div>
         </div>
       </div>

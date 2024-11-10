@@ -1,67 +1,68 @@
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { InfoIcon, Download } from "lucide-react";
+import type { content } from '@/types'
+import { A4LetterTemplate } from '@/components/a4-letter-template'
+import NepaliForm from '@/components/reuseable/nepali-form'
+import { Button } from '@/components/ui/button'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { content } from "@/types";
-import NepaliForm from "@/components/reuseable/nepali-form";
-import { A4LetterTemplate } from "@/components/a4-letter-template";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+} from '@/components/ui/tooltip'
+import { Download, InfoIcon } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
+
+// eslint-disable-next-line unused-imports/no-unused-vars
 const formSchema = z.object({
   refNo: z.string().optional(),
   date: z.coerce.date(),
-  recipientTitle: z.string().min(1, "Recipient title is required"),
-  recipientAddress: z.string().min(1, "Recipient address is required"),
-  subject: z.string().min(1, "Subject is required"),
-  content: z.string().min(1, "Content is required"),
-  signatureTitle: z.string().min(1, "Signature title is required"),
-  signerName: z.string().min(1, "Signer name is required"),
-  signerPosition: z.string().min(1, "Signer position is required"),
-  signature: z.string().url().optional()
-});
+  recipientTitle: z.string().min(1, 'Recipient title is required'),
+  recipientAddress: z.string().min(1, 'Recipient address is required'),
+  subject: z.string().min(1, 'Subject is required'),
+  content: z.string().min(1, 'Content is required'),
+  signatureTitle: z.string().min(1, 'Signature title is required'),
+  signerName: z.string().min(1, 'Signer name is required'),
+  signerPosition: z.string().min(1, 'Signer position is required'),
+  signature: z.string().url().optional(),
+})
 
-export type FormData = z.infer<typeof formSchema>;
+export type FormData = z.infer<typeof formSchema>
 
 export default function CreateLetter() {
   const { control, watch } = useForm<FormData>({
     defaultValues: {
-      refNo: "",
+      refNo: '',
       date: new Date(),
-      recipientTitle: "",
-      recipientAddress: "",
-      subject: "",
-      content: "",
-      signatureTitle: "",
-      signerName: "",
-      signerPosition: "",
-      signature: ""
+      recipientTitle: '',
+      recipientAddress: '',
+      subject: '',
+      content: '',
+      signatureTitle: '',
+      signerName: '',
+      signerPosition: '',
+      signature: '',
     },
-  });
+  })
 
   const [letterData, setLetterData] = useState<content>({
-    refNo: "",
+    refNo: '',
     date: new Date(),
-    recipientTitle: "",
-    recipientAddress: "",
-    subject: "",
-    content: "",
-    signatureTitle: "",
-    signerName: "",
-    signerPosition: "",
-    signature: ""
-  });
+    recipientTitle: '',
+    recipientAddress: '',
+    subject: '',
+    content: '',
+    signatureTitle: '',
+    signerName: '',
+    signerPosition: '',
+    signature: '',
+  })
 
-  const watchedValues = watch();
+  const watchedValues = watch()
 
   useEffect(() => {
-    setLetterData(watchedValues);
-  }, [watchedValues]);
+    setLetterData(watchedValues)
+  }, [watchedValues])
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 p-4">
@@ -102,5 +103,5 @@ export default function CreateLetter() {
         </div>
       </div>
     </div>
-  );
+  )
 }

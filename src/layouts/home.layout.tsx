@@ -1,8 +1,8 @@
-import { Footer } from "@/components/reuseable/footer"
-import { Navbar } from "@/components/reuseable/navbar"
-import { Outlet } from "react-router-dom"
+import { Footer } from '@/components/reuseable/footer'
+import { Navbar } from '@/components/reuseable/navbar'
+import { Outlet } from 'react-router-dom'
 
-const HomeLayout = () => {
+function HomeLayout() {
   return (
     <div className="font-bricolageGrotesque flex flex-col min-h-screen">
       <Navbar />

@@ -1,7 +1,7 @@
-import { Button } from '../ui/button'
 import { Link } from 'react-router-dom'
+import { Button } from '../ui/button'
 
-const CallToAction = () => {
+function CallToAction() {
   return (
     <section className="bg-blue-600">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
@@ -11,7 +11,7 @@ const CallToAction = () => {
         </h2>
         <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
           <div className="inline-flex rounded-md shadow">
-            <Link to="/generator" >
+            <Link to="/generator">
               <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
                 Get Started
               </Button>
@@ -23,4 +23,4 @@ const CallToAction = () => {
   )
 }
 
-export default CallToAction;
+export default CallToAction

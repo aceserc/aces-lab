@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export function replaceNewLines(text: string) {
   return text.split('\n').map((line, index) => (
@@ -6,5 +6,5 @@ export function replaceNewLines(text: string) {
       {line}
       <br className="m-3 bg-black" />
     </React.Fragment>
-  ));
+  ))
 }

@@ -1,8 +1,8 @@
-import { FileQuestion, Home } from "lucide-react"
-import { Link } from "react-router-dom"
-import { Button } from "../ui/button"
+import { FileQuestion, Home } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Button } from '../ui/button'
 
-const NotFound = () => {
+function NotFound() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -21,7 +21,7 @@ const NotFound = () => {
 
           <div className="mt-8 space-y-6">
             <div>
-              <Link to="/" >
+              <Link to="/">
                 <Button className="w-full flex justify-center items-center" size="lg">
                   <Home className="mr-2 h-5 w-5" />
                   Go to Homepage
@@ -29,7 +29,7 @@ const NotFound = () => {
               </Link>
             </div>
             <div>
-              <Link to="/" >
+              <Link to="/">
                 <Button variant="outline" className="w-full flex justify-center items-center" size="lg">
                   Create a Letter
                 </Button>

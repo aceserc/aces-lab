@@ -1,8 +1,8 @@
+import CallToAction from './components/home/CTA'
+import Features from './components/home/features'
+import HeroSection from './components/home/hero-section'
+import SampleLetters from './components/home/sample-letters'
 
-import CallToAction from "./components/home/CTA"
-import Features from "./components/home/features"
-import HeroSection from "./components/home/hero-section"
-import SampleLetters from "./components/home/sample-letters"
 function App() {
   return (
     <>

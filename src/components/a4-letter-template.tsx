@@ -1,25 +1,24 @@
-
-import { Card, CardContent } from "@/components/ui/card";
-import { committeeMembers } from "@/data/committe";
-import ACESLOGO from "@/assets/logo.png";
-import TULOGO from "@/assets/tu.png";
-import type { content, } from "@/types";
-import { replaceNewLines } from "@/lib/new-lines";
+import type { content } from '@/types'
+import ACESLOGO from '@/assets/logo.png'
+import TULOGO from '@/assets/tu.png'
+import { Card, CardContent } from '@/components/ui/card'
+import { committeeMembers } from '@/data/committe'
+import { replaceNewLines } from '@/lib/new-lines'
 // import generatePDF, { Resolution, Margin } from 'react-to-pdf';
 import NepaliDate from 'nepali-datetime'
-export function A4LetterTemplate({
-  refNo = "",
-  content = "",
-  date = new Date(),
-  recipientTitle = "",
-  recipientAddress = "",
-  subject = "",
-  signatureTitle = "",
-  signerName = "",
-  signerPosition = "",
-  signature = ""
-}: content) {
 
+export function A4LetterTemplate({
+  refNo = '',
+  content = '',
+  date = new Date(),
+  recipientTitle = '',
+  recipientAddress = '',
+  subject = '',
+  signatureTitle = '',
+  signerName = '',
+  signerPosition = '',
+  signature = '',
+}: content) {
   // const options = {
   //   resolution: Resolution.HIGH,
   //   page: {
@@ -49,7 +48,10 @@ export function A4LetterTemplate({
             <div className="flex flex-1">
               {/* Sidebar */}
               <div className="w-35 bg-[#87CEEB] p-4 text-xs border-r-2 border-gray-800">
-                <div className="font-bold mb-2">Ref No.: {refNo}</div>
+                <div className="font-bold mb-2">
+                  Ref No.:
+                  {refNo}
+                </div>
                 {committeeMembers.map((role, index) => (
                   <div key={index} className="mt-2 justify-center">
                     <div className="font-bold">{role.title}</div>
@@ -65,7 +67,9 @@ export function A4LetterTemplate({
               <div className="flex-1 p-6 relative">
                 {/* Date */}
                 <div className="absolute font-notoSerifDevanagari top-6 right-6">
-                  मिति: {new NepaliDate(date).format("YYYY-MM-DD")}
+                  मिति:
+                  {' '}
+                  {new NepaliDate(date).format('YYYY-MM-DD')}
                 </div>
 
                 {/* Recipient */}
@@ -77,7 +81,9 @@ export function A4LetterTemplate({
 
                 {/* Subject */}
                 <div className="mb-6 font-notoSerifDevanagari  text-center font-bold">
-                  विषय: {subject}
+                  विषय:
+                  {' '}
+                  {subject}
                 </div>
 
                 {/* Content */}
@@ -105,5 +111,5 @@ export function A4LetterTemplate({
         </CardContent>
       </Card>
     </div>
-  );
+  )
 };

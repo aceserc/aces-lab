@@ -1,33 +1,32 @@
+import type { FormData } from '@/pages/Create'
+import type { Control } from 'react-hook-form'
+import { Button } from '@/components/ui/button'
+import { Calendar } from '@/components/ui/calendar'
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import { Textarea } from '@/components/ui/textarea'
+import { cn } from '@/lib/utils'
+import { format } from 'date-fns'
+import { Calendar as CalendarIcon } from 'lucide-react'
+import React from 'react'
+import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 
-
-import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Calendar } from "@/components/ui/calendar";
-import { Calendar as CalendarIcon } from "lucide-react";
-import { Textarea } from "@/components/ui/textarea";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { format } from "date-fns";
-import { Control, useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
-import { FormData } from "@/pages/Create";
-import { toast } from "sonner";
-import React from "react";
-
-type NepaliFormProps = {
-  control: Control<FormData>;
-};
+interface NepaliFormProps {
+  control: Control<FormData>
+}
 
 export default function NepaliForm({ control }: NepaliFormProps) {
-  const form = useForm<FormData>();
+  const form = useForm<FormData>()
   const onReset = (e: React.SyntheticEvent<EventTarget>) => {
-    e.preventDefault();
-    form.reset();
-    toast.success("Form reset successfully");
-  };
+    e.preventDefault()
+    form.reset()
+    toast.success('Form reset successfully')
+  }
   return (
 
-    <Form {...form} >
+    <Form {...form}>
       <form className="space-y-8  max-w-3xl mx-auto py-10">
 
         <div className="grid grid-cols-12 gap-4">
@@ -45,7 +44,8 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                       placeholder=""
 
                       type="text"
-                      {...field} />
+                      {...field}
+                    />
                   </FormControl>
                   <FormDescription>Reference number of the letter</FormDescription>
                   <FormMessage />
@@ -68,15 +68,17 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                         <Button
                           variant="outline"
                           className={cn(
-                            "w-[240px] pl-3 text-left font-normal",
-                            !field.value && "text-muted-foreground"
+                            'w-[240px] pl-3 text-left font-normal',
+                            !field.value && 'text-muted-foreground',
                           )}
                         >
-                          {field.value ? (
-                            format(field.value, "PPP")
-                          ) : (
-                            <span>Pick a date</span>
-                          )}
+                          {field.value
+                            ? (
+                                format(field.value, 'PPP')
+                              )
+                            : (
+                                <span>Pick a date</span>
+                              )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
                       </FormControl>
@@ -111,12 +113,13 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                     className="font-notoSerifDevanagari text-2xl"
                     placeholder="श्रीमान "
                     type="text"
-                    {...field} />
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />
               </FormItem>
-            );
+            )
           }}
         />
 
@@ -130,7 +133,8 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                 <Input
                   placeholder="पुर्वान्चल क्याम्पस "
                   type="text"
-                  {...field} />
+                  {...field}
+                />
               </FormControl>
 
               <FormMessage />
@@ -147,9 +151,10 @@ export default function NepaliForm({ control }: NepaliFormProps) {
               <FormControl>
                 <Input
                   placeholder="विशिष्ट अतिथिको रूपमा आतिथ्यता जनाई पाउँ भन्ने बारे।"
-                  defaultValue={"विशिष्ट अतिथिको रूपमा आतिथ्यता जनाई पाउँ भन्ने बारे।"}
+                  defaultValue="विशिष्ट अतिथिको रूपमा आतिथ्यता जनाई पाउँ भन्ने बारे।"
                   type="text"
-                  {...field} />
+                  {...field}
+                />
               </FormControl>
 
               <FormMessage />
@@ -186,7 +191,8 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                 <Input
                   placeholder="भवदीय"
                   type="text"
-                  {...field} />
+                  {...field}
+                />
               </FormControl>
               <FormDescription>This valediction for your letter</FormDescription>
               <FormMessage />
@@ -204,7 +210,8 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                 <Input
                   placeholder="ACES"
                   type="text"
-                  {...field} />
+                  {...field}
+                />
               </FormControl>
               <FormDescription>Name of the letter signer.</FormDescription>
               <FormMessage />
@@ -222,7 +229,8 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                 <Input
                   placeholder="President"
                   type="text"
-                  {...field} />
+                  {...field}
+                />
               </FormControl>
               <FormDescription>The position of the signer.</FormDescription>
               <FormMessage />
@@ -240,7 +248,8 @@ export default function NepaliForm({ control }: NepaliFormProps) {
                 <Input
                   placeholder="Link to your signature"
                   type="text"
-                  {...field} />
+                  {...field}
+                />
               </FormControl>
               <FormDescription>Please Provide link to your signature</FormDescription>
               <FormMessage />
@@ -249,6 +258,6 @@ export default function NepaliForm({ control }: NepaliFormProps) {
         />
         <Button onClick={onReset} type="button">Reset Form</Button>
       </form>
-    </Form >
-  );
+    </Form>
+  )
 }
