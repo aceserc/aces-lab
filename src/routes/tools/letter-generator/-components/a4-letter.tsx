@@ -10,6 +10,12 @@ Font.register({
   fontStyle: "normal",
   fontWeight: "normal",
 });
+Font.register({
+  family:"Arial",
+  src:"/assets/fonts/arial.ttf",
+  fontStyle:"normal",
+  fontWeight:"normal",
+});
 
 Font.register({
   family: "BricolageGrotesque",
@@ -33,7 +39,7 @@ Font.register({
 
 const styles = StyleSheet.create({
   page: {
-    fontFamily: "BricolageGrotesque",
+    fontFamily: "Arial",
     width: "100%",
   },
   header: {
