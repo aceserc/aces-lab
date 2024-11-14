@@ -6,14 +6,21 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
-        sagarmatha: ["Sagarmatha", "sans-serif"],
-        mangal: ["Mangal", "sans-serif"],
-        sanskrit: ["Sanskrit", "sans-serif"],
-        kokila: ["Kokila ", "sans-serif"],
-        notoSerifDevanagari: ["Noto Serif Devanagari", "serif"],
-        bricolageGrotesque: ["Bricolage Grotesque", "sans-serif"],
+        "sagarmatha": ["Sagarmatha", "sans-serif"],
+        "mangal": ["Mangal", "sans-serif"],
+        "sanskrit": ["Sanskrit", "sans-serif"],
+        "kokila": ["Kokila ", "sans-serif"],
+        "noto-serif-devanagari": ["Noto Serif Devanagari", "serif"],
+        "bricolage-grotesque": ["Bricolage Grotesque", "sans-serif"],
 
       },
       borderRadius: {

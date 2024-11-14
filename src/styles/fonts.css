@@ -1,24 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+
 @font-face {
   font-family: "Sagarmatha";
-  src: url("../fonts/sagarmatha.ttf") format("truetype");
+  src: url("../assets/fonts/sagarmatha.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Mangal";
-  src: url("../fonts/mangal.ttf") format("truetype");
+  src: url("../assets/fonts/mangal.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Sanskrit";
-  src: url("../fonts/Sanskrit2003.ttf") format("truetype");
+  src: url("../assets/fonts/Sanskrit2003.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Kokila";
-  src: url("../fonts/Kokila.ttf") format("truetype");
+  src: url("../assets/fonts/Kokila.ttf") format("truetype");
 }

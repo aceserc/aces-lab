@@ -19,6 +19,7 @@ export default antfu({
     "perfectionist/sort-imports": ["error", {
       internalPattern: ["@/**"],
     }],
+    "antfu/top-level-function": "off",
     "unicorn/filename-case": ["error", {
       case: "kebabCase",
       ignore: ["README.md"],

@@ -1,14 +1,24 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-import { Toaster } from "sonner";
+import { createRouter, RouterProvider } from "@tanstack/react-router";
+import ReactDOM from "react-dom/client";
 
-import { router } from "./router.tsx";
-import "./index.css";
+import { routeTree } from "./routeTree.gen";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <Toaster position={"top-right"} richColors={true}/>
-    <RouterProvider router={router} />
-  </StrictMode>,
-);
+// Set up a Router instance
+const router = createRouter({
+  routeTree,
+  defaultPreload: "intent",
+});
+
+// Register things for typesafety
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router;
+  }
+}
+
+const rootElement = document.getElementById("root")!;
+
+if (!rootElement.innerHTML) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(<RouterProvider router={router} />);
+}
