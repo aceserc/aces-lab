@@ -24,10 +24,15 @@ Font.register({
   fontStyle: "normal",
   fontWeight: "normal",
 });
+Font.register({
+  family: "NotoSerifDevanagari",
+  src: "/assets/fonts/NotoSerifDevanagari-Bold.ttf",
+  fontStyle: "normal",
+  fontWeight: "bold",
+});
 
 const styles = StyleSheet.create({
   page: {
-    padding: 20,
     fontFamily: "BricolageGrotesque",
     width: "100%",
   },
@@ -45,7 +50,7 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
   },
   sidebar: {
-    width: 180,
+    width: 160,
     backgroundColor: "#87CEEB",
     padding: 10,
     borderRight: "2px solid #333",
@@ -108,7 +113,7 @@ const A4LetterPDF = () => {
                 <Text>
                   Ref No.:
                   {" "}
-                  {letterContent.refNo ?? "Not Set"}
+                  {letterContent.refNo ?? "..."}
                 </Text>
                 {committeeMembers.map((role, index) => (
                   <View key={index} style={{ marginTop: 10 }}>
@@ -129,11 +134,18 @@ const A4LetterPDF = () => {
                 </Text>
 
                 <Text>{letterContent.content?.recipientsInfo}</Text>
-                <Text style={[styles.textCenter, { marginTop: 20, fontWeight: "bold" }]}>
-                  विषय:
-                  {" "}
-                  {letterContent.content?.subject}
-                </Text>
+                <View style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                >
+                  <Text style={[styles.textCenter, { marginTop: 20, fontWeight: "bold", textAlign: "center" }]}>
+                    विषय:
+                    {" "}
+                    {letterContent.content?.subject}
+                  </Text>
+                </View>
 
                 <Text style={{ marginTop: 20, textAlign: "justify", flexGrow: 1 }}>
                   {letterContent.content?.greetings}

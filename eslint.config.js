@@ -24,5 +24,6 @@ export default antfu({
       case: "kebabCase",
       ignore: ["README.md"],
     }],
+    'ts/no-redeclare': "off"
   },
 });
