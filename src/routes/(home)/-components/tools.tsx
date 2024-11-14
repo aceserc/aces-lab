@@ -12,6 +12,13 @@ const TOOLS = [
     href: "/tools/letter-generator",
   },
   {
+    icon: "https://www.svgrepo.com/show/423007/certificate-award-trophy.svg",
+    title: "Mass Certificate Generator",
+    description: "Generate multiple certificates at once",
+    href: "/tools/mass-certificate-generator",
+  },
+
+  {
     icon: "https://www.svgrepo.com/show/441440/folder-plus.svg",
     title: "More Tools",
     description:
