@@ -2,7 +2,6 @@ import { createLazyFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { Suspense } from "react";
 
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { buttonVariants } from "@/components/ui/button";
 
 import A4Letter from "./-components/a4-letter";
