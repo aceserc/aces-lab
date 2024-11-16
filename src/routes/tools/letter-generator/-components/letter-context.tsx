@@ -1,11 +1,12 @@
 import type { ReactNode } from "react";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import NepaliDate from "nepali-datetime";
+import React, { createContext, useContext, useState } from "react";
 
 import type { DeepPartial } from "@/types/helpers";
 import type { LetterGeneratorFormSchema } from "@/zod/letter-generator";
 
-type LetterContent = DeepPartial<LetterGeneratorFormSchema>;
+export type LetterContent = DeepPartial<LetterGeneratorFormSchema>;
 
 interface LetterContextProps {
   letterContent: LetterContent;
@@ -18,18 +19,22 @@ export const DEFAULT_LETTER_CONTENT: LetterContent = {
     subHeading: "IOE Purwanchal Campus, Dharan-8",
     estd: "2070",
   },
+  refNo: "...",
   logos: {
-    leftLogo: "https://www.aceserc.org/logo.png",
-    rightLogo: "http://localhost:5173/tu.png",
+    leftLogo: "/logo.png",
+    rightLogo: "/tu.png",
   },
   content: {
-    date: new Date().toString(),
+    date: new NepaliDate().toString().split(" ")[0],
     greetings: "महोदय,",
     recipientsInfo: "श्रीमान्/श्रीमती...",
     body: "उपर्युक्त सम्बन्धमा ...",
     subject: "...",
   },
   email: "aces@ioepc.edu.np",
+  signatureBlock: {
+    salutation: "भवदीय,",
+  },
 };
 
 export const LetterContext = createContext<LetterContextProps | null>(null);

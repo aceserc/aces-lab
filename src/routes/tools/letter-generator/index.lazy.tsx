@@ -2,6 +2,7 @@ import { createLazyFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { Suspense } from "react";
 
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { buttonVariants } from "@/components/ui/button";
 
 import A4Letter from "./-components/a4-letter";
@@ -33,16 +34,18 @@ function RouteComponent() {
           {" "}
           Letter Generator
         </header>
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-5 gap-16">
+          <div className="bg-muted rounded-md col-span-3 h-[90vh] w-full sticky top-4">
+            <Suspense fallback={(
+              <div>
+                Loading...
+              </div>
+            )}
+            >
+              <A4Letter />
+            </Suspense>
+          </div>
           <Form />
-          <Suspense fallback={(
-            <div>
-              Loading...
-            </div>
-          )}
-          >
-            <A4Letter />
-          </Suspense>
         </div>
       </main>
     </LetterContextProvider>

@@ -1,6 +1,6 @@
-import { string, z } from "zod";
+import { z } from "zod";
 
-import { Email, NonEmptyString, PositiveNumber, URL } from "./common";
+import { Email, NonEmptyString, URL } from "./common";
 
 export const LetterGeneratorFormSchema = z.object({
   headers: z.object({
@@ -8,7 +8,7 @@ export const LetterGeneratorFormSchema = z.object({
     subHeading: NonEmptyString("Subheading"),
     estd: NonEmptyString("Established"),
   }),
-  refNo: PositiveNumber("Reference Number"),
+  refNo: NonEmptyString("Reference Number"),
   logos: z.object({
     leftLogo: URL("Left Logo"),
     rightLogo: URL("Right Logo"),
@@ -24,6 +24,7 @@ export const LetterGeneratorFormSchema = z.object({
     signatureUrl: URL("Signature URL"),
     name: NonEmptyString("Name"),
     position: NonEmptyString("Position"),
+    salutation: NonEmptyString("Salutation"),
   }),
   email: Email("Email"),
 });
